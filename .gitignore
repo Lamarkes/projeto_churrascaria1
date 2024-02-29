@@ -126,7 +126,7 @@ celerybeat.pid
 # Environments
 >>>>>>> e3130b138d93a95629aaffb65a74b507934741a0
 .env
-.venv
+venv
 env/
 venv/
 ENV/
