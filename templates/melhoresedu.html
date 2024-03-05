@@ -2,20 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Violencia</title>
+    <title>Melhores na Educaçao</title>
     <link rel="stylesheet" type="text/css" href="../static/style2.css">
 </head>
 <body>
-    <h1>Gráfico da Violência X PIB</h1>
+    <h1>Gráfico de Melhores na Educaçao</h1>
 
-    <form action="/grafvioleciapib" METHOD="POST">
-        <label>Digite a quantidade de cidades mais violentas que você quer filtrar</label>
+    <form action="/melhoresedu" METHOD="POST">
+        <label>Digite a quantidade de cidades com a melhor educação que voce deseja visualizar: </label>
         <input type="text" name="valor">
         <button type="submit">Filtrar</button>
 
     </form>
 
-    {{plot|safe}}
-
+    {{figura|safe}}
 </body>
 </html>

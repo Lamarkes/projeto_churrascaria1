@@ -19,5 +19,11 @@ def exibirmapacorrelacoes(data):
     return fig
 
 def exibirgraficobarraseduc(dados):
+   # print(dados)
     fig = px.bar(dados, x='municipio', y='somaedu')
+    return fig
+
+def exibirgraficopizzaidebanosiniciais(dados):
+
+    fig = px.pie(dados, values='idebanosiniciais', names='municipio')
     return fig

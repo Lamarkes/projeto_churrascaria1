@@ -37,15 +37,30 @@ def gerarGrafCorrelacao():
 
     return render_template('grafcorrelacao.html', mapa=fig2.to_html())
 
-@app.route('/melhoresedu')
-def exibirmunicipiosedu():
-    data = da.lerdados()
 
+@app.route('/melhoresedu', methods=['POST', 'GET'])
+def exibirmunicipiosedu():
+    if request.method == 'POST':
+        filtro = int(request.form.get('valor'))
+    else:
+        filtro = 10
+
+    data = da.lerdados()
     data['somaedu'] = data['idebanosiniciais'] + data['idebanosfinais']
     data.sort_values(by=['somaedu'], ascending=False, inplace=True)
-    fig = da.exibirgraficobarraseduc(data.head(15))
+    fig = da.exibirgraficobarraseduc(data.head(filtro))
 
     return render_template('melhoresedu.html', figura=fig.to_html())
+
+@app.route('/idebanosiniciais', methods=['GET'])
+def exibiranosiniciaisideb():
+    data = da.lerdados()
+
+    fig = da.exibirgraficopizzaidebanosiniciais(data.head(10))
+
+    return render_template('idebanosiniciais.html', figura=fig.to_html())
+
+
 
 @app.route('/menu')
 def menu():
