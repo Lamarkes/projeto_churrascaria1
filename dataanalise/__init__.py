@@ -18,11 +18,6 @@ def exibirmapacorrelacoes(data):
     fig = px.imshow(data.corr())
     return fig
 
-
-
-'''
-['Municípios', 'Gentílico',
-       'Salário médio mensal dos trabalhadores formais', 'PIB per capita',
-       'IDEB – Anos finais do ensino fundamental (Rede pública)',
-       'População no último censo']
-'''
+def exibirgraficobarraseduc(dados):
+    fig = px.bar(dados, x='municipio', y='somaedu')
+    return fig
