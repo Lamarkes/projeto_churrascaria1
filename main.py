@@ -61,6 +61,28 @@ def exibiranosiniciaisideb():
     return render_template('idebanosiniciais.html', figura=fig.to_html())
 
 
+@app.route('/graficoidebanosfinais', methods=['GET', 'POST'])
+def exibiranosfinaisideb():
+    if request.method == 'POST':
+        filtro = int(request.form.get('valor'))
+    else:
+        filtro = 6
+    dados = da.lerdados()
+
+    fig = da.exibirgraficoideb(dados.head(filtro))
+
+    return render_template('graficoideb.html', graf=fig.to_html())
+
+
+@app.route('/grafidhpormunicipio', methods=['GET'])
+def exibiridhrendapercapita():
+
+    dados = da.lerdados()
+
+    fig = da.exibiridhmunicipio(dados.head(5))
+
+    return render_template('grafridh.html', fig=fig.to_html())
+
 
 @app.route('/menu')
 def menu():

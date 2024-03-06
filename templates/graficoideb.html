@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grafico Ideb anos Finais</title>
+    <link rel="stylesheet" type="text/css" href="../static/style2.css">
+</head>
+<body>
+
+    <h1>Gráfico dos anos finais Ideb</h1>
+
+    <form action="/graficoidebanosfinais" METHOD="POST">
+        <label>Digite a quantidade de municipios que voce deseja filtrar:</label>
+        <input type="text" name="valor">
+        <button type="submit">Filtrar</button>
+
+    </form>
+
+
+    {{graf|safe}}}
+
+</body>
+</html>
